@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/modal.css">
+
+    <title>products - Main</title>
+</head>
+
+
+<body>
+<div class="container-fluid">
+    <div>
+        <button type="button" class="btn btn-secondary" id="createBtn">Create New Product</button>
+    </div>
+    
+    <div class="modal-overlay" data-close="true">
+        <div class="modal-window">
+            <div class="modal-header">
+                <span class="modal-title">Product Options</span>
+                <span class="modal-close-btn" data-close="true">&times;</span>
+            </div>
+            <div class="modal-content">
+                <form name="productForm" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="productId">
+                    <table class="form-table">
+                        <tr>
+                            <td class="form-label"><label for="productName">Product name:</label> </td>
+                            <td class="form-input"><input type="text" name="productName" id="productName" class="form-control" ></td>
+                        </tr>
+                        <tr>
+                            <td class="form-label"><label for="productVolume">Product volume:</label> </td>
+                            <td class="form-input"><input type="number" name="productVolume" id="productVolume" class="form-control" min="20" max="2000"></td>
+                        </tr>
+                        <tr>
+                            <td class="form-label"><label for="productMaterial">Product material:</label> </td>
+                            <td class="form-input">
+                                <!-- <input type="text" name="productMaterial" id="productMaterial"> -->
+                                <select name="productMaterial" id="productMaterial" class="form-select">
+                                    <option>Glass</option>
+                                    <option>Porcelian</option>
+                                    <option>Silicon</option>
+                                    <option>Plastic</option>
+                                    <option>Paper</option>
+                                    </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-label"><label for="productImage">Product image:</label> </td>
+                            <td class="form-input"><input type="file" name="productImage" id="productImage" class="form-control"></td>
+                        </tr>
+                    </table>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" id="submitBtn" value="Confirm">
+                        <input type="reset" class="btn btn-danger" id="cancelBtn" data-close="true" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dataContainer"></div>
+
+
+<script src="js/modal.js"></script>
+<script src="js/formhandling.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

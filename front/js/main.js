@@ -1,0 +1,1 @@
+createBtn.addEventListener("click", modalOpen)
